@@ -1,3 +1,5 @@
+import 'package:figmadesign/screen1/screen1page.dart';
+import 'package:figmadesign/screen2/screen2page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,16 +37,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-           color: Colors.red[100],
+
           child: Column(
             children: [
-              _customWidget(text: "Screen 1"),
-              _customWidget(text: "Screen 2"),
+              _customWidget(text: "Screen 1",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ScreenPage()),
+                );
+              }),
+              _customWidget(text: "Screen 2",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ScreenSecondPage()),
+                );
+              }),
               _customWidget(text: "Screen 3"),
               _customWidget(text: "Screen 4"),
               _customWidget(text: "Screen 5"),
@@ -57,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-
     );
   }
   Widget _customWidget({String? text , GestureTapCallback? onTap}){
@@ -65,14 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        margin:const  EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+        margin:const  EdgeInsets.symmetric(horizontal: 20,vertical: 15),
         padding:const  EdgeInsets.symmetric(horizontal: 13,vertical: 13),
         width: double.infinity,
         decoration: BoxDecoration(
-         color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
+         color: Colors.red,
+          borderRadius: BorderRadius.circular(30),
         ),
-        child: Text(text!,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.red),),
+        child: Text(text!,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.white),),
       ),
     );
   }
