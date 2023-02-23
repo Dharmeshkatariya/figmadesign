@@ -56,7 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const ScreenSecondPage()),
                 );
               }),
-              _customWidget(text: "Screen 3"),
+              _customWidget(text: "Screen 3",
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ScreenSecondPage()),
+                );
+              }),
               _customWidget(text: "Screen 4"),
               _customWidget(text: "Screen 5"),
               _customWidget(text: "Screen 6"),
