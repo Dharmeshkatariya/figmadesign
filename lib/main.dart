@@ -1,5 +1,6 @@
 import 'package:figmadesign/screen1/screen1page.dart';
 import 'package:figmadesign/screen2/screen2page.dart';
+import 'package:figmadesign/screen3page/screen3page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ScreenSecondPage()),
+                  MaterialPageRoute(builder: (context) => const ThirdScreen()),
                 );
               }),
               _customWidget(text: "Screen 4"),
