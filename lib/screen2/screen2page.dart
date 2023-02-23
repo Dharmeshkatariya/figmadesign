@@ -10,7 +10,7 @@ class ScreenSecondPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        margin:const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: Column(
           children: [
             _historyRow(),
@@ -83,26 +83,30 @@ class ScreenSecondPage extends StatelessWidget {
       ],
     );
   }
-  Widget _containerRow(){
+
+  Widget _containerRow() {
     return Row(
       children: [
         Common.containerButton(
-          color: Colors.deepPurple,
-          borderRadius: BorderRadius.circular(12),
-          child:Column(
-            children: [
-              Row(
-                children: [
-                  Common.customText(text: "Transaction",fontWeight: FontWeight.w400,fontSize: 12,color: Colors.white),
-                  SvgPicture.asset(
-                    'assets/screen2/icon/incoming.svg',
-                  ),
-                ],
-              ),
-              Common.customText(text: "")
-            ],
-          )
-        )
+            color: Colors.deepPurple,
+            borderRadius: BorderRadius.circular(12),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Common.customText(
+                        text: "Transaction",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        color: Colors.white),
+                    SvgPicture.asset(
+                      'assets/screen2/icon/incoming.svg',
+                    ),
+                  ],
+                ),
+                Common.customText(text: "")
+              ],
+            ))
       ],
     );
   }
