@@ -17,7 +17,6 @@ class _ThirdScreenState extends State<ThirdScreen> {
     mList = Common().setData();
     super.initState();
   }
-
   List<User> mList = [];
 
   @override

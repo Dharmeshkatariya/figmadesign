@@ -1,6 +1,7 @@
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Common {
   static Widget customText(
@@ -48,6 +49,21 @@ class Common {
     );
   }
 
+  static Widget textField(
+      {TextEditingController? controller, String? text, Widget? prefixIcon}) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: text,
+        labelText: text,
+        prefixIcon: prefixIcon,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+  }
+
   List<UserData> userList = [];
 
   var image = [
@@ -80,22 +96,25 @@ class Common {
       userList.add(userData);
     }
     return userList;
-
   }
 
-
   List<User> uList = [];
-  var name = ["Edwardo","Jasson","Kemod","Dasep"];
-  var eName = ["E","J","K","D"];
-  var userImage = ["assets/screen3/icon/image1.png","assets/screen3/icon/image2.png","assets/screen3/icon/i3.png","assets/screen3/icon/i4.png",];
-  var mobile = [62898023450,62898023450,62898023450,62898023450];
+  var name = ["Edwardo", "Jasson", "Kemod", "Dasep"];
+  var eName = ["E", "J", "K", "D"];
+  var userImage = [
+    "assets/screen3/icon/image1.png",
+    "assets/screen3/icon/image2.png",
+    "assets/screen3/icon/i3.png",
+    "assets/screen3/icon/i4.png",
+  ];
+  var mobile = [62898023450, 62898023450, 62898023450, 62898023450];
 
-  List<User> setData(){
-    for(int i=0;i<name.length;i++){
-      User user =User();
-      user.name = name [i];
-      user.mobile = mobile [i];
-      user.image = userImage [i];
+  List<User> setData() {
+    for (int i = 0; i < name.length; i++) {
+      User user = User();
+      user.name = name[i];
+      user.mobile = mobile[i];
+      user.image = userImage[i];
       user.eName = eName[i];
       uList.add(user);
     }
