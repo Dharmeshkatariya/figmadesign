@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -84,4 +83,22 @@ class Common {
 
   }
 
+
+  List<User> uList = [];
+  var name = ["Edwardo","Jasson","Kemod","Dasep"];
+  var eName = ["E","J","K","D"];
+  var userImage = ["assets/screen3/icon/image1.png","assets/screen3/icon/image2.png","assets/screen3/icon/i3.png","assets/screen3/icon/i4.png",];
+  var mobile = [62898023450,62898023450,62898023450,62898023450];
+
+  List<User> setData(){
+    for(int i=0;i<name.length;i++){
+      User user =User();
+      user.name = name [i];
+      user.mobile = mobile [i];
+      user.image = userImage [i];
+      user.eName = eName[i];
+      uList.add(user);
+    }
+    return uList;
+  }
 }
