@@ -1,3 +1,4 @@
+import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,12 +51,17 @@ class Common {
   }
 
   static Widget textField(
-      {TextEditingController? controller, String? text, Widget? prefixIcon}) {
+      {TextEditingController? controller,
+      String? text,
+      Widget? prefixIcon,
+      Color? fillColor}) {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
         hintText: text,
         labelText: text,
+        fillColor: fillColor,
+        filled: true,
         prefixIcon: prefixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -119,5 +125,28 @@ class Common {
       uList.add(user);
     }
     return uList;
+  }
+
+  List<Car> cList = [];
+  var cname = ["Gotham Car Reparation", "Gotham Car", "Gotham auto moto","Gotham Car"];
+  var cImage = [
+    "assets/screen4/icon/car.png",
+    "assets/screen4/icon/auto.png",
+    "assets/screen4/icon/auto.png",
+    "assets/screen4/icon/car.png",
+  ];
+  var cTime = ["8am-5am", "8am-5am", "8am-5am","8am-5am"];
+  var cAddress = ["surat", "surat", "valsad","Bardoli"];
+
+  List<Car> carData() {
+    for (int i = 0; i < name.length; i++) {
+      Car car = Car();
+      car.name = cname[i];
+      car.image = cImage[i];
+      car.time = cTime[i];
+      car.address = cAddress[i];
+      cList.add(car);
+    }
+    return cList;
   }
 }
