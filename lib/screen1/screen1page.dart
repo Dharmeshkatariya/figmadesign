@@ -28,7 +28,7 @@ class _ScreenPageState extends State<ScreenPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset('assets/screen1/icon/aero.svg'),
+                    SvgPicture.asset('assets/screen1/icon/back.svg'),
                     const Spacer(),
                     GestureDetector(
                         onTap: () {

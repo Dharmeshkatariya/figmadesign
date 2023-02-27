@@ -1,3 +1,4 @@
+import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/userdata.dart';
@@ -54,6 +55,7 @@ class Common {
       {TextEditingController? controller,
       String? text,
       Widget? prefixIcon,
+      Widget? suffixIcon,
       Color? fillColor}) {
     return TextField(
       controller: controller,
@@ -63,6 +65,7 @@ class Common {
         fillColor: fillColor,
         filled: true,
         prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -128,15 +131,20 @@ class Common {
   }
 
   List<Car> cList = [];
-  var cname = ["Gotham Car Reparation", "Gotham Car", "Gotham auto moto","Gotham Car"];
+  var cname = [
+    "Gotham Car Reparation",
+    "Gotham Car",
+    "Gotham auto moto",
+    "Gotham Car"
+  ];
   var cImage = [
     "assets/screen4/icon/car.png",
     "assets/screen4/icon/auto.png",
     "assets/screen4/icon/auto.png",
     "assets/screen4/icon/car.png",
   ];
-  var cTime = ["8am-5am", "8am-5am", "8am-5am","8am-5am"];
-  var cAddress = ["surat", "surat", "valsad","Bardoli"];
+  var cTime = ["8am-5am", "8am-5am", "8am-5am", "8am-5am"];
+  var cAddress = ["surat", "surat", "valsad", "Bardoli"];
 
   List<Car> carData() {
     for (int i = 0; i < name.length; i++) {
@@ -148,5 +156,19 @@ class Common {
       cList.add(car);
     }
     return cList;
+  }
+
+  List<Art> arList = [];
+  var artName = ["Art", "Couture", 'Collator', "Celebrate"];
+
+  List<Art> artData() {
+    for (int i = 0; i < artName.length; i++) {
+      Art art = Art();
+      art.artName = artName[i];
+      art.selected = true;
+      arList.add(art);
+
+    }
+    return arList;
   }
 }

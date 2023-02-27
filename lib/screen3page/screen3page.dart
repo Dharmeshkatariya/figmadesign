@@ -107,7 +107,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             Navigator.pop(context);
           },
           child: SvgPicture.asset(
-            "assets/screen3/icon/aero.svg",
+            "assets/screen3/icon/back.svg",
             color: Colors.black,
           ),
         ),
