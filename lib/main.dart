@@ -3,6 +3,7 @@ import 'package:figmadesign/screen2/screen2page.dart';
 import 'package:figmadesign/screen3page/screen3page.dart';
 import 'package:figmadesign/screen4.dart';
 import 'package:figmadesign/screen5/screen5.dart';
+import 'package:figmadesign/screen6/screen6.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -80,7 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
 
               }),
-              _customWidget(text: "Screen 6"),
+              _customWidget(text: "Screen 6",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FoodPage()),
+                );
+              }),
               _customWidget(text: "Screen 7"),
               _customWidget(text: "Screen 8"),
               _customWidget(text: "Screen 9"),
