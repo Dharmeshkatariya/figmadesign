@@ -64,7 +64,7 @@ class _FoodPageState extends State<FoodPage> {
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 10),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle
                       ),

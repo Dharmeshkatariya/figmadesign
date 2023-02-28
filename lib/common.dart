@@ -1,6 +1,7 @@
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
+import 'package:figmadesign/model/reviewdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:figmadesign/model/vegatable.dart';
 import 'package:flutter/cupertino.dart';
@@ -189,5 +190,29 @@ class Common {
       vegList.add(vegatable);
     }
     return vegList;
+  }
+
+  List<Review> reviewData(){
+    List<Review> reviewList = [];
+
+    var image = ["assets/screen7/icon/g.png","assets/screen7/icon/g1.png","assets/screen7/icon/g.png","assets/screen7/icon/g1.png"];
+    var name = ["Sharon Jem","Amy Gary","Sharon Gary","Amy Jem"];
+    var time= ["1d ago","2d ago","5d ago","10d ago"];
+    var desc = ["Had such an amazing session with Maria. She instantly picked up on the level of my fitness and adjusted the workout to suit me whilst also pushing me to my limits.",
+    "Maria has been amazing! 💪 Joining his coaching has been transformational for me and she makes it so much fun to workout with her I ve had several personal training experiences and this one is by far the best. Maria may very well be the best personal trainer in this app 😉",
+      "Maria has been amazing! 💪 Joining his coaching has been transformational for me and she makes it so much fun to workout with her I ve had several personal training experiences and this one is by far the best. Maria may very well be the best personal trainer in this app 😉",
+      "Had such an amazing session with Maria. She instantly picked up on the level of my fitness and adjusted the workout to suit me whilst also pushing me to my limits."
+    ];
+    for(int i=0;i<image.length;i++){
+      Review review = Review();
+      review.uName = name[i];
+      review.uImage = image[i];
+      review.discrption = desc[i];
+      review.uTime = time[i];
+
+      reviewList.add(review);
+    }
+
+    return reviewList;
   }
 }
