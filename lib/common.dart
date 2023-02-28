@@ -1,6 +1,7 @@
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
+import 'package:figmadesign/model/monthdata.dart';
 import 'package:figmadesign/model/reviewdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:figmadesign/model/vegatable.dart';
@@ -214,5 +215,39 @@ class Common {
     }
 
     return reviewList;
+  }
+
+  List<Month> monthData(){
+    List<Month>  monthList = [];
+    var name = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+    for(int i = 0 ;i<name.length;i++ ){
+      Month month = Month();
+      month.name = name[i];
+
+      monthList.add(month);
+    }
+    return monthList;
+  }
+
+  List<Month> weeklyData(){
+    List<Month> mList = [];
+    var tittle = ["monday 3, jan","tuesday 4,jan","wed 5 ,jan","Thursday 6 ,jan "];
+    var image = ["assets/screen8/icon/morning.png",
+      "assets/screen8/icon/af.png",
+      "assets/screen8/icon/morning.png",
+      "assets/screen8/icon/af.png",
+
+    ];
+    var day = ["Morning","Afternoon","Evening","Night"];
+
+    for(int i = 0 ; i<tittle.length;i++){
+      Month month = Month();
+      month.tittle = tittle[i];
+      month.day = day[i];
+      month.image = image[i];
+      mList.add(month);
+
+    }
+    return mList;
   }
 }
