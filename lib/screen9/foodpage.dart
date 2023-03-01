@@ -1,6 +1,8 @@
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:figmadesign/common.dart';
 import 'package:figmadesign/model/meals-data.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -63,45 +65,78 @@ class _FoodScreenPageState extends State<FoodScreenPage> {
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _searchRow(),
-                _labelRow(),
-                _imageSlider(),
-                SizedBox(
-                  height: 145,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: sList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return _listItem(index);
-                      }),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _searchRow(),
+              _labelRow(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _imageSlider(),
+                      SizedBox(
+                        height: 145,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: sList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return _listItem(index);
+                            }),
+                      ),
+                     const  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Common.customText(
+                          text: "Popular Meals",
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20),
+                      Common.customText(
+                          text: "view all",
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15,color: Colors.orange),
+                    ],
+                  ),
+                      const  SizedBox(height: 10,),
+                      SizedBox(
+                        height: 340,
+                        child: GridView.count(
+                          shrinkWrap:true,
+                          physics: NeverScrollableScrollPhysics(),
+                            primary: false,
+                            crossAxisSpacing: 12,
+                            mainAxisSpacing: 10,
+                            crossAxisCount: 2,
+                            children: List.generate(
+                                mList.length, (index) => _gridItem(index))),
+                      ),
+                    ],
+                  ),
                 ),
-                Common.customText(
-                    text: "Popular Meals",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20),
-                const SizedBox(
-                  height: 5,
-                ),
-                SizedBox(
-                  height: 195,
-                  child: GridView.count(
-                      primary: false,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 10,
-                      crossAxisCount: 2,
-                      children: List.generate(
-                          mList.length, (index) => _gridItem(index))),
-                ),
-              ],
-            ),
+              )
+            ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _listItem(int index) {
+    Shop shop = sList[index];
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(shop.fImage),
+          Common.customText(
+              text: shop.fName, fontSize: 12, fontWeight: FontWeight.w400),
+        ],
       ),
     );
   }
@@ -138,22 +173,6 @@ class _FoodScreenPageState extends State<FoodScreenPage> {
           ),
         )
       ],
-    );
-  }
-
-  Widget _listItem(int index) {
-    Shop shop = sList[index];
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      margin: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(shop.fImage),
-          Common.customText(
-              text: shop.fName, fontSize: 12, fontWeight: FontWeight.w400),
-        ],
-      ),
     );
   }
 

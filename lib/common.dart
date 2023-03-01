@@ -1,8 +1,10 @@
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
+import 'package:figmadesign/model/foododer.dart';
+import 'package:figmadesign/model/lapinozdata.dart';
+import 'package:figmadesign/model/mcdonalditem.dart';
 import 'package:figmadesign/model/meals-data.dart';
-
 import 'package:figmadesign/model/monthdata.dart';
 import 'package:figmadesign/model/reviewdata.dart';
 import 'package:figmadesign/model/shopdata.dart';
@@ -59,19 +61,19 @@ class Common {
   static Widget textField(
       {TextEditingController? controller,
       String? text,
-        String? text1,
+      String? text1,
       Widget? prefixIcon,
       Widget? suffixIcon,
       Color? fillColor,
-        TextStyle? labelStyle,
-        TextInputType? keyboardType}) {
+      TextStyle? labelStyle,
+      TextInputType? keyboardType}) {
     return TextField(
       keyboardType: keyboardType,
       controller: controller,
       decoration: InputDecoration(
         hintText: text,
         labelText: text1,
-       labelStyle:labelStyle,
+        labelStyle: labelStyle,
         fillColor: fillColor,
         filled: true,
         prefixIcon: prefixIcon,
@@ -82,7 +84,6 @@ class Common {
       ),
     );
   }
-
 
   List<UserData> getData() {
     List<UserData> userList = [];
@@ -118,8 +119,6 @@ class Common {
     return userList;
   }
 
-
-
   List<User> setData() {
     List<User> uList = [];
     var name = ["Edwardo", "Jasson", "Kemod", "Dasep"];
@@ -141,7 +140,6 @@ class Common {
     }
     return uList;
   }
-
 
   List<Car> carData() {
     List<Car> cList = [];
@@ -172,7 +170,6 @@ class Common {
   }
 
   List<Art> artData() {
-
     List<Art> arList = [];
     var artName = ["Art", "Couture", 'Collator', "Celebrate"];
 
@@ -181,37 +178,45 @@ class Common {
       art.artName = artName[i];
       art.selected = true;
       arList.add(art);
-
     }
     return arList;
   }
 
-  List<Vegatable>  vegatableData(){
+  List<Vegatable> vegatableData() {
     List<Vegatable> vegList = [];
-    var vegImage = ["assets/screen6/icon/veg1.svg","assets/screen6/icon/heart.svg",];
-    var vegName = ["Point vert","Vert"];
+    var vegImage = [
+      "assets/screen6/icon/veg1.svg",
+      "assets/screen6/icon/heart.svg",
+    ];
+    var vegName = ["Point vert", "Vert"];
 
-    for(int i = 0;i<vegName.length;i++){
+    for (int i = 0; i < vegName.length; i++) {
       Vegatable vegatable = Vegatable();
-      vegatable.vegName = vegName [i];
+      vegatable.vegName = vegName[i];
       vegatable.vegImage = vegImage[i];
       vegList.add(vegatable);
     }
     return vegList;
   }
 
-  List<Review> reviewData(){
+  List<Review> reviewData() {
     List<Review> reviewList = [];
 
-    var image = ["assets/screen7/icon/g.png","assets/screen7/icon/g1.png","assets/screen7/icon/g.png","assets/screen7/icon/g1.png"];
-    var name = ["Sharon Jem","Amy Gary","Sharon Gary","Amy Jem"];
-    var time= ["1d ago","2d ago","5d ago","10d ago"];
-    var desc = ["Had such an amazing session with Maria. She instantly picked up on the level of my fitness and adjusted the workout to suit me whilst also pushing me to my limits.",
-    "Maria has been amazing! 💪 Joining his coaching has been transformational for me and she makes it so much fun to workout with her I ve had several personal training experiences and this one is by far the best. Maria may very well be the best personal trainer in this app 😉",
+    var image = [
+      "assets/screen7/icon/g.png",
+      "assets/screen7/icon/g1.png",
+      "assets/screen7/icon/g.png",
+      "assets/screen7/icon/g1.png"
+    ];
+    var name = ["Sharon Jem", "Amy Gary", "Sharon Gary", "Amy Jem"];
+    var time = ["1d ago", "2d ago", "5d ago", "10d ago"];
+    var desc = [
+      "Had such an amazing session with Maria. She instantly picked up on the level of my fitness and adjusted the workout to suit me whilst also pushing me to my limits.",
+      "Maria has been amazing! 💪 Joining his coaching has been transformational for me and she makes it so much fun to workout with her I ve had several personal training experiences and this one is by far the best. Maria may very well be the best personal trainer in this app 😉",
       "Maria has been amazing! 💪 Joining his coaching has been transformational for me and she makes it so much fun to workout with her I ve had several personal training experiences and this one is by far the best. Maria may very well be the best personal trainer in this app 😉",
       "Had such an amazing session with Maria. She instantly picked up on the level of my fitness and adjusted the workout to suit me whilst also pushing me to my limits."
     ];
-    for(int i=0;i<image.length;i++){
+    for (int i = 0; i < image.length; i++) {
       Review review = Review();
       review.uName = name[i];
       review.uImage = image[i];
@@ -224,10 +229,23 @@ class Common {
     return reviewList;
   }
 
-  List<Month> monthData(){
-    List<Month>  monthList = [];
-    var name = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
-    for(int i = 0 ;i<name.length;i++ ){
+  List<Month> monthData() {
+    List<Month> monthList = [];
+    var name = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "June",
+      "July",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+    for (int i = 0; i < name.length; i++) {
       Month month = Month();
       month.name = name[i];
 
@@ -236,60 +254,74 @@ class Common {
     return monthList;
   }
 
-  List<Month> weeklyData(){
+  List<Month> weeklyData() {
     List<Month> mList = [];
-    var tittle = ["monday 3, jan","tuesday 4,jan","wed 5 ,jan","Thursday 6 ,jan "];
-    var image = ["assets/screen8/icon/morning.png",
+    var tittle = [
+      "monday 3, jan",
+      "tuesday 4,jan",
+      "wed 5 ,jan",
+      "Thursday 6 ,jan "
+    ];
+    var image = [
+      "assets/screen8/icon/morning.png",
       "assets/screen8/icon/af.png",
       "assets/screen8/icon/morning.png",
       "assets/screen8/icon/af.png",
-
     ];
-    var day = ["Morning","Afternoon","Evening","Night"];
+    var day = ["Morning", "Afternoon", "Evening", "Night"];
 
-    for(int i = 0 ; i<tittle.length;i++){
+    for (int i = 0; i < tittle.length; i++) {
       Month month = Month();
       month.tittle = tittle[i];
       month.day = day[i];
       month.image = image[i];
       mList.add(month);
-
     }
     return mList;
   }
 
-  List<Shop> gShopData(){
+  List<Shop> gShopData() {
     List<Shop> shopList = [];
 
-    var fImage = ["assets/screen9/icon/stoberry.png",
-
+    var fImage = [
+      "assets/screen9/icon/stoberry.png",
       "assets/screen9/icon/milk.png",
       "assets/screen9/icon/cola.png",
       "assets/screen9/icon/soda.png",
     ];
-    var fName  = ["Strawberry \nmargarita","Strawberry \nmilkshake","Cocktails","Hard \nsoda"];
-      for(int i = 0 ; i<fName.length;i++){
-        Shop shop = Shop();
-        shop.fName = fName[i];
-        shop.fImage = fImage[i];
-        shopList.add(shop);
-      }
+    var fName = [
+      "Strawberry \nmargarita",
+      "Strawberry \nmilkshake",
+      "Cocktails",
+      "Hard \nsoda"
+    ];
+    for (int i = 0; i < fName.length; i++) {
+      Shop shop = Shop();
+      shop.fName = fName[i];
+      shop.fImage = fImage[i];
+      shopList.add(shop);
+    }
 
     return shopList;
   }
 
-  List<Meals> mealsData(){
+  List<Meals> mealsData() {
     List<Meals> mealList = [];
-    var mName = ["Jollof Rice","Peppered Snail","Rice milkshake","Jira Rice"];
-    var mImage = ["assets/screen9/icon/rice.png",
+    var mName = [
+      "Jollof Rice",
+      "Peppered Snail",
+      "Rice milkshake",
+      "Jira Rice"
+    ];
+    var mImage = [
+      "assets/screen9/icon/rice.png",
       "assets/screen9/icon/snake.png",
       "assets/screen9/icon/jirarice.png",
-
       "assets/screen9/icon/s.png",
     ];
-    var mPrice = [2000,2500,1500,2400];
+    var mPrice = [2000, 2500, 1500, 2400];
 
-    for(int i = 0 ; i<mName.length;i++){
+    for (int i = 0; i < mName.length; i++) {
       Meals meals = Meals();
       meals.mName = mName[i];
       meals.mImage = mImage[i];
@@ -297,5 +329,68 @@ class Common {
       mealList.add(meals);
     }
     return mealList;
+  }
+
+  List<McdonaldPage> mcdonaldData() {
+    List<McdonaldPage> mList = [];
+    var tittle = [
+      "What’s your mood today?",
+      "Popular moods you can get",
+    ];
+    for (int i = 0; i < tittle.length; i++) {
+      McdonaldPage mcdonaldPage = McdonaldPage();
+      mcdonaldPage.tittle = tittle[i];
+      mList.add(mcdonaldPage);
+    }
+    return mList;
+  }
+
+  List<McdonaldItem> mcdonalItem(){
+    List<McdonaldItem> aList = [];
+    var name = [
+   "Snacks",
+   "Pizza",
+   "Biryani",
+    ];
+    var image = ["assets/screen10/icon/snack10.png",
+      "assets/screen10/icon/pizza.png",
+      "assets/screen10/icon/biryani.png",
+    ];
+
+    for(int i = 0 ; i<name.length;i++){
+      McdonaldItem mcdonaldItem = McdonaldItem();
+      mcdonaldItem.name = name[i];
+      mcdonaldItem.image = image[i];
+      aList.add(mcdonaldItem);
+    }
+    return aList;
+  }
+
+  List<FoodItem> fastFood(){
+    List<FoodItem> fList = [];
+    var name =  ["Pav Bhaji","Loaded Pizza","Veg Fix Thali"];
+    var image =  ["assets/screen10/icon/pavbhaji.png",
+      "assets/screen10/icon/lapinio.png",
+      "assets/screen10/icon/maruti.png",
+    ];
+    var foodType =  ["North Indian, Snacks","Pizza, Fast food","Pizza, Fast food"];
+    var shopName =  ["Das Kitchen","La Pino’z Pizza","Shree Marutinandan"];
+    var time =  ["40min","25min","15min"];
+    var distance =  [2 ,4,5];
+    var price =  [100,175,100];
+
+
+    for(int i = 0 ; i<name.length;i++){
+      FoodItem foodItem = FoodItem();
+      foodItem.name = name[i];
+      foodItem.image = image[i];
+      foodItem.foodType = foodType[i];
+      foodItem.shopName = shopName[i];
+      foodItem.time = time[i];
+      foodItem.distance = distance[i];
+      foodItem.price = price[i];
+      fList.add(foodItem);
+    }
+    return fList;
   }
 }
