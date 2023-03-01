@@ -33,6 +33,8 @@ dependencies:
     sdk: flutter
   flutter_svg: ^1.1.6
   carousel_slider: ^4.2.1
+  curved_navigation_bar: ^1.0.3
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -70,6 +72,7 @@ flutter:
     - assets/screen7/icon/
     - assets/screen8/icon/
     - assets/screen9/icon/
+    - assets/screen10/icon/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

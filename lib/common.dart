@@ -63,6 +63,7 @@ class Common {
       Widget? prefixIcon,
       Widget? suffixIcon,
       Color? fillColor,
+        TextStyle? labelStyle,
         TextInputType? keyboardType}) {
     return TextField(
       keyboardType: keyboardType,
@@ -70,6 +71,7 @@ class Common {
       decoration: InputDecoration(
         hintText: text,
         labelText: text1,
+       labelStyle:labelStyle,
         fillColor: fillColor,
         filled: true,
         prefixIcon: prefixIcon,

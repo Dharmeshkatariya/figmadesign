@@ -1,4 +1,5 @@
 import 'package:figmadesign/screen1/screen1page.dart';
+import 'package:figmadesign/screen10/screen10page.dart';
 import 'package:figmadesign/screen2/screen2page.dart';
 import 'package:figmadesign/screen3page/screen3page.dart';
 import 'package:figmadesign/screen4.dart';
@@ -108,7 +109,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(builder: (context) => const FoodScreenPage()),
                 );
-              }),
+              }
+              ),
+              _customWidget(text: "Screen 10",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FoodOderPage()),
+                );
+              }
+              ),
             ],
           ),
           ),
