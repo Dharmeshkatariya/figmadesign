@@ -6,6 +6,7 @@ import 'package:figmadesign/screen5/screen5.dart';
 import 'package:figmadesign/screen6/screen6.dart';
 import 'package:figmadesign/screen7/reviewpage.dart';
 import 'package:figmadesign/screen8/screen8.dart';
+import 'package:figmadesign/screen9/foodpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -102,7 +103,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const MultiPlane()),
                 );
               }),
-              _customWidget(text: "Screen 9"),
+              _customWidget(text: "Screen 9",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FoodScreenPage()),
+                );
+              }),
             ],
           ),
           ),

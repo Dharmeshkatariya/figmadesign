@@ -1,11 +1,13 @@
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
+import 'package:figmadesign/model/meals-data.dart';
+
 import 'package:figmadesign/model/monthdata.dart';
 import 'package:figmadesign/model/reviewdata.dart';
+import 'package:figmadesign/model/shopdata.dart';
 import 'package:figmadesign/model/userdata.dart';
 import 'package:figmadesign/model/vegatable.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Common {
@@ -57,14 +59,17 @@ class Common {
   static Widget textField(
       {TextEditingController? controller,
       String? text,
+        String? text1,
       Widget? prefixIcon,
       Widget? suffixIcon,
-      Color? fillColor}) {
+      Color? fillColor,
+        TextInputType? keyboardType}) {
     return TextField(
+      keyboardType: keyboardType,
       controller: controller,
       decoration: InputDecoration(
         hintText: text,
-        labelText: text,
+        labelText: text1,
         fillColor: fillColor,
         filled: true,
         prefixIcon: prefixIcon,
@@ -249,5 +254,46 @@ class Common {
 
     }
     return mList;
+  }
+
+  List<Shop> gShopData(){
+    List<Shop> shopList = [];
+
+    var fImage = ["assets/screen9/icon/stoberry.png",
+
+      "assets/screen9/icon/milk.png",
+      "assets/screen9/icon/cola.png",
+      "assets/screen9/icon/soda.png",
+    ];
+    var fName  = ["Strawberry \nmargarita","Strawberry \nmilkshake","Cocktails","Hard \nsoda"];
+      for(int i = 0 ; i<fName.length;i++){
+        Shop shop = Shop();
+        shop.fName = fName[i];
+        shop.fImage = fImage[i];
+        shopList.add(shop);
+      }
+
+    return shopList;
+  }
+
+  List<Meals> mealsData(){
+    List<Meals> mealList = [];
+    var mName = ["Jollof Rice","Peppered Snail","Rice milkshake","Jira Rice"];
+    var mImage = ["assets/screen9/icon/rice.png",
+      "assets/screen9/icon/snake.png",
+      "assets/screen9/icon/jirarice.png",
+
+      "assets/screen9/icon/s.png",
+    ];
+    var mPrice = [2000,2500,1500,2400];
+
+    for(int i = 0 ; i<mName.length;i++){
+      Meals meals = Meals();
+      meals.mName = mName[i];
+      meals.mImage = mImage[i];
+      meals.mPrice = mPrice[i];
+      mealList.add(meals);
+    }
+    return mealList;
   }
 }
