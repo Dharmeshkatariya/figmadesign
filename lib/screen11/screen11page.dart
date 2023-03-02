@@ -1,6 +1,7 @@
 import 'package:figmadesign/common.dart';
 import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/grillchicken.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -82,7 +83,9 @@ class _GrillFoodPageState extends State<GrillFoodPage> {
                       topLeft: Radius.circular(35),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        const SizedBox(height: 10,),
                         SizedBox(
                           height: 25,
                           child: ListView.builder(
@@ -292,7 +295,7 @@ class _GrillFoodPageState extends State<GrillFoodPage> {
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: Colors.blue.shade100,
             borderRadius: BorderRadius.circular(20),
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 1),
