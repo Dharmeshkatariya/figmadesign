@@ -54,6 +54,7 @@ class _HousePageState extends State<HousePage> {
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: const Icon(Icons.mic),
                     ),
+                    const   SizedBox(height: 10,),
                     SizedBox(
                       height: 45,
                       child: ListView.builder(
@@ -63,7 +64,9 @@ class _HousePageState extends State<HousePage> {
                             return _allList(index);
                           }),
                     ),
+                    const   SizedBox(height: 10,),
                     _imageSlider(),
+                    const   SizedBox(height: 20,),
                     _featureRow("Featured Estates"),
                     SizedBox(
                       height: 150,
@@ -87,7 +90,7 @@ class _HousePageState extends State<HousePage> {
                     ),
                     _featureRow("Top Estate Agent"),
                     SizedBox(
-                      height: 100,
+                      height: 120,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: aList.length,
@@ -121,10 +124,10 @@ class _HousePageState extends State<HousePage> {
    Widget _personList(int index){
      HouseData houseData = aList[index];
     return Container(
-
       padding: const EdgeInsets.symmetric(horizontal: 5),
       margin:const  EdgeInsets.symmetric(horizontal: 5,vertical: 5),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(houseData.pImage),
           Common.customText(text: houseData.person,fontSize: 10,fontWeight: FontWeight.w500,color: Colors.blue.shade900),
@@ -150,6 +153,7 @@ class _HousePageState extends State<HousePage> {
   Widget _gridItem(int index) {
     BunglaHouse bunglaHouse = homeList[index];
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
       color: Colors.blue.shade50,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -193,7 +197,7 @@ class _HousePageState extends State<HousePage> {
     return Container(
       color: Colors.blue.shade50,
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      margin: const EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
