@@ -1,7 +1,9 @@
 import 'package:figmadesign/model/artdata.dart';
+import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/foododer.dart';
+import 'package:figmadesign/model/grillchicken.dart';
 import 'package:figmadesign/model/lapinozdata.dart';
 import 'package:figmadesign/model/mcdonalditem.dart';
 import 'package:figmadesign/model/meals-data.dart';
@@ -392,5 +394,55 @@ class Common {
       fList.add(foodItem);
     }
     return fList;
+  }
+
+  List<BestFood> bestFoodData(){
+    List<BestFood> bList = [];
+    var name = ["Grill Chicken",
+      "Grill Chicken",
+      "Grill Chicken",
+      "Grill Chicken",
+    ];
+    var image = [
+      "assets/screen11/icon/grill.png",
+      "assets/screen11/icon/grill.png",
+      "assets/screen11/icon/grill.png",
+      "assets/screen11/icon/grill.png",
+    ];
+    var itemName = ["Salad","Pizza","Drink","Icecream"];
+    var price = [10,10,10,10];
+
+    for(int i = 0 ; i<name.length; i++){
+     BestFood bestFood = BestFood();
+
+     bestFood.name = name [i];
+     bestFood.image = image [i];
+     bestFood.itemName = itemName [i];
+     bestFood.price = price [i];
+     bList.add(bestFood);
+    }
+    return bList;
+  }
+
+  List<GrillData> grillChickenData(){
+    List<GrillData> gLIst = [];
+
+    var name = ["Grill chicken","Grill chicken","Grill chicken",];
+    var image = ["assets/screen11/icon/grill.png",
+      "assets/screen11/icon/grill.png",
+      "assets/screen11/icon/grill.png",
+    ];
+    var time = ["25min","20min","10min"];
+    var price = [36,25,35];
+
+    for(int i = 0 ; i<name.length;i++){
+      GrillData grillData = GrillData();
+      grillData.name = name[i];
+      grillData.time = time[i];
+      grillData.image = image[i];
+      grillData.price = price[i];
+      gLIst.add(grillData);
+    }
+    return gLIst;
   }
 }
