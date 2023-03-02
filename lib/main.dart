@@ -2,6 +2,7 @@ import 'package:figmadesign/screen1/screen1page.dart' show ScreenPage;
 import 'package:figmadesign/screen10/screen10page.dart';
 import 'package:figmadesign/screen11/screen11page.dart';
 import 'package:figmadesign/screen12/scren12page.dart';
+import 'package:figmadesign/screen13/screen13page.dart';
 import 'package:figmadesign/screen2/screen2page.dart';
 import 'package:figmadesign/screen3page/screen3page.dart';
 import 'package:figmadesign/screen4.dart';
@@ -133,6 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutmePage()),
+                );
+              }
+
+              ),
+              _customWidget(text: "Screen 13",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HousePage()),
                 );
               }
 

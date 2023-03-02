@@ -44,10 +44,7 @@ class _AboutmePageState extends State<AboutmePage> {
       body: SafeArea(
           child: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: _profile(),
-          ),
+          _profile(),
           Expanded(
             flex: 3,
             child: Container(

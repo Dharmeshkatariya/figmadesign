@@ -1,10 +1,13 @@
+import 'package:figmadesign/model/Statesdata.dart';
 import 'package:figmadesign/model/aboutview.dart';
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/bestfood.dart';
+import 'package:figmadesign/model/bunglahouse.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/foododer.dart';
 import 'package:figmadesign/model/grillchicken.dart';
+import 'package:figmadesign/model/homedata.dart';
 import 'package:figmadesign/model/lapinozdata.dart';
 import 'package:figmadesign/model/mcdonalditem.dart';
 import 'package:figmadesign/model/meals-data.dart';
@@ -348,19 +351,20 @@ class Common {
     return mList;
   }
 
-  List<McdonaldItem> mcdonalItem(){
+  List<McdonaldItem> mcdonalItem() {
     List<McdonaldItem> aList = [];
     var name = [
-   "Snacks",
-   "Pizza",
-   "Biryani",
+      "Snacks",
+      "Pizza",
+      "Biryani",
     ];
-    var image = ["assets/screen10/icon/snack10.png",
+    var image = [
+      "assets/screen10/icon/snack10.png",
       "assets/screen10/icon/pizza.png",
       "assets/screen10/icon/biryani.png",
     ];
 
-    for(int i = 0 ; i<name.length;i++){
+    for (int i = 0; i < name.length; i++) {
       McdonaldItem mcdonaldItem = McdonaldItem();
       mcdonaldItem.name = name[i];
       mcdonaldItem.image = image[i];
@@ -369,21 +373,25 @@ class Common {
     return aList;
   }
 
-  List<FoodItem> fastFood(){
+  List<FoodItem> fastFood() {
     List<FoodItem> fList = [];
-    var name =  ["Pav Bhaji","Loaded Pizza","Veg Fix Thali"];
-    var image =  ["assets/screen10/icon/pavbhaji.png",
+    var name = ["Pav Bhaji", "Loaded Pizza", "Veg Fix Thali"];
+    var image = [
+      "assets/screen10/icon/pavbhaji.png",
       "assets/screen10/icon/lapinio.png",
       "assets/screen10/icon/maruti.png",
     ];
-    var foodType =  ["North Indian, Snacks","Pizza, Fast food","Pizza, Fast food"];
-    var shopName =  ["Das Kitchen","La Pino’z Pizza","Shree Marutinandan"];
-    var time =  ["40min","25min","15min"];
-    var distance =  [2 ,4,5];
-    var price =  [100,175,100];
+    var foodType = [
+      "North Indian, Snacks",
+      "Pizza, Fast food",
+      "Pizza, Fast food"
+    ];
+    var shopName = ["Das Kitchen", "La Pino’z Pizza", "Shree Marutinandan"];
+    var time = ["40min", "25min", "15min"];
+    var distance = [2, 4, 5];
+    var price = [100, 175, 100];
 
-
-    for(int i = 0 ; i<name.length;i++){
+    for (int i = 0; i < name.length; i++) {
       FoodItem foodItem = FoodItem();
       foodItem.name = name[i];
       foodItem.image = image[i];
@@ -397,9 +405,10 @@ class Common {
     return fList;
   }
 
-  List<BestFood> bestFoodData(){
+  List<BestFood> bestFoodData() {
     List<BestFood> bList = [];
-    var name = ["Grill Chicken",
+    var name = [
+      "Grill Chicken",
       "Grill Chicken",
       "Grill Chicken",
       "Grill Chicken",
@@ -410,33 +419,38 @@ class Common {
       "assets/screen11/icon/grill.png",
       "assets/screen11/icon/grill.png",
     ];
-    var itemName = ["Salad","Pizza","Drink","Icecream"];
-    var price = [10,10,10,10];
+    var itemName = ["Salad", "Pizza", "Drink", "Icecream"];
+    var price = [10, 10, 10, 10];
 
-    for(int i = 0 ; i<name.length; i++){
-     BestFood bestFood = BestFood();
+    for (int i = 0; i < name.length; i++) {
+      BestFood bestFood = BestFood();
 
-     bestFood.name = name [i];
-     bestFood.image = image [i];
-     bestFood.itemName = itemName [i];
-     bestFood.price = price [i];
-     bList.add(bestFood);
+      bestFood.name = name[i];
+      bestFood.image = image[i];
+      bestFood.itemName = itemName[i];
+      bestFood.price = price[i];
+      bList.add(bestFood);
     }
     return bList;
   }
 
-  List<GrillData> grillChickenData(){
+  List<GrillData> grillChickenData() {
     List<GrillData> gLIst = [];
 
-    var name = ["Grill chicken","Grill chicken","Grill chicken",];
-    var image = ["assets/screen11/icon/grill.png",
+    var name = [
+      "Grill chicken",
+      "Grill chicken",
+      "Grill chicken",
+    ];
+    var image = [
+      "assets/screen11/icon/grill.png",
       "assets/screen11/icon/grill.png",
       "assets/screen11/icon/grill.png",
     ];
-    var time = ["25min","20min","10min"];
-    var price = [36,25,35];
+    var time = ["25min", "20min", "10min"];
+    var price = [36, 25, 35];
 
-    for(int i = 0 ; i<name.length;i++){
+    for (int i = 0; i < name.length; i++) {
       GrillData grillData = GrillData();
       grillData.name = name[i];
       grillData.time = time[i];
@@ -447,9 +461,17 @@ class Common {
     return gLIst;
   }
 
-  List<AboutView>  aboutProfileData(){
+  List<AboutView> aboutProfileData() {
     List<AboutView> aboutList = [];
-    var tittle = ["About me","Work experience","Education","Skill","language","Apprection","Resume"];
+    var tittle = [
+      "About me",
+      "Work experience",
+      "Education",
+      "Skill",
+      "language",
+      "Apprection",
+      "Resume"
+    ];
     var icon = [
       "assets/screen12/icon/about.svg",
       "assets/screen12/icon/worke.svg",
@@ -457,7 +479,6 @@ class Common {
       "assets/screen12/icon/skill.svg",
       "assets/screen12/icon/lang.svg",
       "assets/screen12/icon/lang.svg",
-
       "assets/screen12/icon/resume.svg",
     ];
     var suffixIcon = [
@@ -467,20 +488,20 @@ class Common {
       "assets/screen12/icon/ballpen.svg",
       "assets/screen12/icon/ballpen.svg",
       "assets/screen12/icon/ballpen.svg",
-
       "assets/screen12/icon/Add.svg",
     ];
 
-    var disc = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus id commodo egestas metus interdum dolor",
-    "Manager \nAmazon Inc \nJan 2015 - Feb 2022",
-    "Information Technology \nUniversity of Oxford \nSep 2010 - Aug 2013 ",
-    "Leadership \nTeamwork\nVisioner",
-    "English \nGerman\nSpanish",
-    "Wireless Symposium (RWS) \nYoung Scientist\n2014",
-    "Jamet kudasi - CV - UI/UX Designer"
+    var disc = [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus id commodo egestas metus interdum dolor",
+      "Manager \nAmazon Inc \nJan 2015 - Feb 2022",
+      "Information Technology \nUniversity of Oxford \nSep 2010 - Aug 2013 ",
+      "Leadership \nTeamwork\nVisioner",
+      "English \nGerman\nSpanish",
+      "Wireless Symposium (RWS) \nYoung Scientist\n2014",
+      "Jamet kudasi - CV - UI/UX Designer"
     ];
 
-    for(int i = 0 ; i<icon.length;i++){
+    for (int i = 0; i < icon.length; i++) {
       AboutView aboutView = AboutView();
 
       aboutView.tittle = tittle[i];
@@ -492,5 +513,114 @@ class Common {
     }
 
     return aboutList;
+  }
+
+  List<HouseData> homeDetail() {
+    List<HouseData> homeList = [];
+
+    var name = ["All", "House", "Apartment", "House"];
+    var location = ["surat","rajkot","Delhi","Jakarta"];
+    var cityImage = [
+      "assets/screen13/icon/c1.png",
+      "assets/screen13/icon/c2.png",
+      "assets/screen13/icon/c2.png",
+      "assets/screen13/icon/c1.png",
+    ];
+    var person = [
+    "Amanda",
+    "Aman",
+    "jenny",
+      "jems",
+    ];
+    var pImage = [
+      "assets/screen13/icon/person1.png",
+      "assets/screen13/icon/person2.png",
+      "assets/screen13/icon/person3.png",
+      "assets/screen13/icon/person4.png",
+    ];
+    for (int i = 0; i < name.length; i++) {
+      HouseData houseData = HouseData();
+      houseData.name = name[i];
+      houseData.person =person[i];
+      houseData.cityImage =cityImage[i];
+      houseData.location =location[i];
+      houseData.pImage =pImage[i];
+      homeList.add(houseData);
+    }
+    return homeList;
+  }
+
+  List<Estates> apartmentData() {
+    List<Estates> homeList = [];
+    var name = ["apartment", "villa", "apartment", "villa"];
+    var image = [
+      "assets/screen13/icon/home2.png",
+      "assets/screen13/icon/home1.png",
+      "assets/screen13/icon/home3.png",
+      "assets/screen13/icon/home4.png",
+    ];
+    var apartment = [
+      "Sky Dandelions \nApartment",
+      "Sky Dandelions \nApartment",
+      "Sky Dandelions \nApartment",
+      "Sky Dandelions \nApartment",
+    ];
+    var location = [
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+    ];
+    var rate = [
+      290,
+      290,
+      290,
+      290,
+    ];
+    for(int i = 0 ; i<name.length;i++){
+      Estates estates = Estates();
+      estates.name = name[i];
+      estates.image = image[i];
+      estates.apartment = apartment[i];
+      estates.location = location[i];
+      estates.rate = rate[i];
+      homeList.add(estates);
+    }
+    return homeList;
+  }
+  List<BunglaHouse> bunglaData(){
+    List<BunglaHouse> hList = [];
+    var name = ["Wings Tower", "Mill Sper House", "Bungalow House", "Sky Dandelions Apartment"];
+    var image = [
+      "assets/screen13/icon/home1.png",
+      "assets/screen13/icon/home3.png",
+      "assets/screen13/icon/home4.png",
+      "assets/screen13/icon/home5.png",
+    ];
+
+    var location = [
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+      "Jakarta, Indonesia",
+    ];
+    var rate = [
+      2900,
+      2900,
+      2800,
+      2000,
+
+    ];
+
+    for(int i = 0 ; i<name.length;i++){
+      BunglaHouse bunglaHouse =BunglaHouse();
+      bunglaHouse.name = name[i];
+      bunglaHouse.image = image[i];
+      bunglaHouse.location = location[i];
+      bunglaHouse.rate = rate[i];
+      hList.add(bunglaHouse);
+    }
+
+    return hList;
   }
 }
