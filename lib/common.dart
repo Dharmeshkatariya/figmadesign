@@ -1,3 +1,4 @@
+import 'package:figmadesign/model/aboutview.dart';
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/cardata.dart';
@@ -444,5 +445,52 @@ class Common {
       gLIst.add(grillData);
     }
     return gLIst;
+  }
+
+  List<AboutView>  aboutProfileData(){
+    List<AboutView> aboutList = [];
+    var tittle = ["About me","Work experience","Education","Skill","language","Apprection","Resume"];
+    var icon = [
+      "assets/screen12/icon/about.svg",
+      "assets/screen12/icon/worke.svg",
+      "assets/screen12/icon/educat.svg",
+      "assets/screen12/icon/skill.svg",
+      "assets/screen12/icon/lang.svg",
+      "assets/screen12/icon/lang.svg",
+
+      "assets/screen12/icon/resume.svg",
+    ];
+    var suffixIcon = [
+      "assets/screen12/icon/ballpen.svg",
+      "assets/screen12/icon/Add.svg",
+      "assets/screen12/icon/Add.svg",
+      "assets/screen12/icon/ballpen.svg",
+      "assets/screen12/icon/ballpen.svg",
+      "assets/screen12/icon/ballpen.svg",
+
+      "assets/screen12/icon/Add.svg",
+    ];
+
+    var disc = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus id commodo egestas metus interdum dolor",
+    "Manager \nAmazon Inc \nJan 2015 - Feb 2022",
+    "Information Technology \nUniversity of Oxford \nSep 2010 - Aug 2013 ",
+    "Leadership \nTeamwork\nVisioner",
+    "English \nGerman\nSpanish",
+    "Wireless Symposium (RWS) \nYoung Scientist\n2014",
+    "Jamet kudasi - CV - UI/UX Designer"
+    ];
+
+    for(int i = 0 ; i<icon.length;i++){
+      AboutView aboutView = AboutView();
+
+      aboutView.tittle = tittle[i];
+      aboutView.icon = icon[i];
+      aboutView.suffixIcon = suffixIcon[i];
+      aboutView.discription = disc[i];
+      aboutView.isSelected = false;
+      aboutList.add(aboutView);
+    }
+
+    return aboutList;
   }
 }

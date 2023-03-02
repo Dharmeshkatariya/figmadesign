@@ -1,12 +1,8 @@
 import 'package:figmadesign/common.dart';
 import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/grillchicken.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-
-
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class GrillFoodPage extends StatefulWidget {
