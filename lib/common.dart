@@ -4,6 +4,7 @@ import 'package:figmadesign/model/aboutview.dart';
 import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/bunglahouse.dart';
+import 'package:figmadesign/model/calldetail.dart';
 import 'package:figmadesign/model/cardata.dart';
 import 'package:figmadesign/model/clothshopping_data.dart';
 import 'package:figmadesign/model/contactdata.dart';
@@ -708,5 +709,57 @@ class Common {
     }
 
     return fList;
+  }
+
+  List<DetailReview> reviewPageData() {
+    List<DetailReview> mList = [];
+    var name = [
+      "Ademola Adedoyin",
+      "Ogunkunle Ayobami",
+      "Amole Toluwanimi",
+    ];
+    var tittle = [
+      "10am- 11pm",
+      "18, Idowu Martins, Ikeja, Lagos",
+      "09023654781",
+    ];
+    var image = [
+      "assets/screen15/icon/g1.png",
+      "assets/screen15/icon/g2.png",
+      "assets/screen15/icon/g3.png",
+    ];
+    var svgIcon = [
+      "assets/screen15/icon/clock15.svg",
+      "assets/screen15/icon/location15.svg",
+      "assets/screen15/icon/call15.svg",
+
+    ];
+
+    var disc = [
+      "This place is so nice. \nThe decor is a site to \nnsee and their food is top notch. \nI really can’t wait to visit this \nrestaurant again!",
+      "I had doubts at first but on \ngetting there, \nI was really surprised and \nwas not disappointed. \nSuch a beautiful place!",
+      "They sure have good meals here!. \nI can’t wait to go back there. \nThe sharwarma was heavenly.",
+    ];
+    var date = [
+      "08-04-2022| 11:30am",
+      "08-04-2022| 11:30am",
+      "14-03-2022| 05:15pm",
+    ];
+
+    var rating = [4.2,4.5,4.8];
+
+    for(int i =0 ;i<name.length;i++){
+      DetailReview detailReview = DetailReview();
+
+      detailReview.name = name [i];
+      detailReview.image = image [i];
+      detailReview.description = disc [i];
+      detailReview.date = date [i];
+      detailReview.rating = rating [i];
+      detailReview.svgIcon = svgIcon[i];
+      detailReview.title = tittle[i];
+      mList.add(detailReview);
+    }
+    return mList;
   }
 }

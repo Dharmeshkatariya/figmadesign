@@ -78,6 +78,7 @@ flutter:
     - assets/screen12/icon/
     - assets/screen13/icon/
     - assets/screen14/icon/
+    - assets/screen15/icon/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
