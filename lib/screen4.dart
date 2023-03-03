@@ -113,39 +113,7 @@ class _ScreenFourPageState extends State<ScreenFourPage> {
                     top: 110,
                     left: 10,
                     right: 10,
-                    child: CarouselSlider(
-                      carouselController: buttonCarouselController,
-                      items: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Common.customText(
-                                  text: "Get \servives \from home",
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 20,
-                                  color: Colors.black),
-                              Image.asset(
-                                "assets/screen1/icon/image1.png",
-                                height: 100,
-                                width: 100,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        viewportFraction: 1,
-                        aspectRatio: 2.0,
-                        initialPage: 0,
-                      ),
-                    ),
+                    child: Common.imageSlider(item: _imageSlider()),
                   ),
                 ],
               ),
@@ -163,7 +131,29 @@ class _ScreenFourPageState extends State<ScreenFourPage> {
       ),
     );
   }
-
+ Widget _imageSlider(){
+    return  Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Common.customText(
+              text: "Get \servives \from home",
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              color: Colors.black),
+          Image.asset(
+            "assets/screen1/icon/image1.png",
+            height: 100,
+            width: 100,
+          ),
+        ],
+      ),
+    );
+ }
   Widget _listItem(int index) {
     Car car = carList[index];
     return Container(
