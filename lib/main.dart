@@ -1,8 +1,10 @@
+import 'package:figmadesign/common.dart';
 import 'package:figmadesign/screen1/screen1page.dart' show ScreenPage;
 import 'package:figmadesign/screen10/screen10page.dart';
 import 'package:figmadesign/screen11/screen11page.dart';
 import 'package:figmadesign/screen12/scren12page.dart';
 import 'package:figmadesign/screen13/screen13page.dart';
+import 'package:figmadesign/screen14/screen14page.dart';
 import 'package:figmadesign/screen2/screen2page.dart';
 import 'package:figmadesign/screen3page/screen3page.dart';
 import 'package:figmadesign/screen4.dart';
@@ -55,96 +57,103 @@ class _MyHomePageState extends State<MyHomePage> {
 
           child: Column(
             children: [
-              _customWidget(text: "Screen 1",onTap: (){
+              Common.navigatePage(text: "Screen 1",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ScreenPage()),
                 );
-              }),
-              _customWidget(text: "Screen 2",onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 2",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ScreenSecondPage()),
                 );
-              }),
-              _customWidget(text: "Screen 3",
-              onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 3",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ThirdScreen()),
                 );
-              }),
-              _customWidget(text: "Screen 4",onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 4",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ScreenFourPage()),
                 );
-              }),
-              _customWidget(text: "Screen 5",onTap: (){
-
+              }
+              ),
+              Common.navigatePage(text: "Screen 5",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ScreenFive()),
                 );
-
-              }),
-              _customWidget(text: "Screen 6",onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 6",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const FoodPage()),
                 );
-              }),
-              _customWidget(text: "Screen 7",onTap: (){
-
+              }
+              ),
+              Common.navigatePage(text: "Screen 7",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ReviewPage()),
                 );
-              }),
-              _customWidget(text: "Screen 8",onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 8",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MultiPlane()),
                 );
-              }),
-              _customWidget(text: "Screen 9",onTap: (){
+              }
+              ),
+              Common.navigatePage(text: "Screen 9",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const FoodScreenPage()),
                 );
               }
               ),
-              _customWidget(text: "Screen 10",onTap: (){
+              Common.navigatePage(text: "Screen 10",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const FoodOderPage()),
                 );
               }
-
               ),
-              _customWidget(text: "Screen 11",onTap: (){
+              Common.navigatePage(text: "Screen 11",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const GrillFoodPage()),
                 );
               }
-
               ),
-              _customWidget(text: "Screen 12",onTap: (){
+              Common.navigatePage(text: "Screen 12",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutmePage()),
                 );
               }
-
               ),
-              _customWidget(text: "Screen 13",onTap: (){
+              Common.navigatePage(text: "Screen 13",onTap: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const HousePage()),
                 );
               }
-
+              ),
+              Common.navigatePage(text: "Screen 14",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ClothesPage()),
+                );
+              }
               ),
             ],
           ),
@@ -153,20 +162,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  Widget _customWidget({String? text , GestureTapCallback? onTap}){
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        alignment: Alignment.center,
-        margin:const  EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-        padding:const  EdgeInsets.symmetric(horizontal: 13,vertical: 13),
-        width: double.infinity,
-        decoration: BoxDecoration(
-         color: Colors.red,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Text(text!,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.white),),
-      ),
-    );
-  }
+
 }

@@ -5,6 +5,7 @@ import 'package:figmadesign/model/artdata.dart';
 import 'package:figmadesign/model/bestfood.dart';
 import 'package:figmadesign/model/bunglahouse.dart';
 import 'package:figmadesign/model/cardata.dart';
+import 'package:figmadesign/model/clothshopping_data.dart';
 import 'package:figmadesign/model/contactdata.dart';
 import 'package:figmadesign/model/foododer.dart';
 import 'package:figmadesign/model/grillchicken.dart';
@@ -30,6 +31,27 @@ class Common {
         ));
   }
 
+  static Widget navigatePage({String? text, GestureTapCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Text(
+          text!,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   static Widget containerButton({
     Color? color,
     BorderRadiusGeometry? borderRadius,
@@ -47,10 +69,10 @@ class Common {
     );
   }
 
-  static Widget imageSlider({item }){
+  static Widget imageSlider({item}) {
     CarouselController buttonCarouselController = CarouselController();
     return CarouselSlider(
-      items:  [
+      items: [
         item,
       ],
       carouselController: buttonCarouselController,
@@ -63,6 +85,7 @@ class Common {
       ),
     );
   }
+
   static Widget customContainer(
       {Color? color,
       BorderRadiusGeometry? borderRadius,
@@ -536,7 +559,7 @@ class Common {
     List<HouseData> homeList = [];
 
     var name = ["All", "House", "Apartment", "House"];
-    var location = ["surat","rajkot","Delhi","Jakarta"];
+    var location = ["surat", "rajkot", "Delhi", "Jakarta"];
     var cityImage = [
       "assets/screen13/icon/c1.png",
       "assets/screen13/icon/c2.png",
@@ -544,9 +567,9 @@ class Common {
       "assets/screen13/icon/c1.png",
     ];
     var person = [
-    "Amanda",
-    "Aman",
-    "jenny",
+      "Amanda",
+      "Aman",
+      "jenny",
       "jems",
     ];
     var pImage = [
@@ -558,10 +581,10 @@ class Common {
     for (int i = 0; i < name.length; i++) {
       HouseData houseData = HouseData();
       houseData.name = name[i];
-      houseData.person =person[i];
-      houseData.cityImage =cityImage[i];
-      houseData.location =location[i];
-      houseData.pImage =pImage[i];
+      houseData.person = person[i];
+      houseData.cityImage = cityImage[i];
+      houseData.location = location[i];
+      houseData.pImage = pImage[i];
       homeList.add(houseData);
     }
     return homeList;
@@ -594,7 +617,7 @@ class Common {
       290,
       290,
     ];
-    for(int i = 0 ; i<name.length;i++){
+    for (int i = 0; i < name.length; i++) {
       Estates estates = Estates();
       estates.name = name[i];
       estates.image = image[i];
@@ -605,9 +628,15 @@ class Common {
     }
     return homeList;
   }
-  List<BunglaHouse> bunglaData(){
+
+  List<BunglaHouse> bunglaData() {
     List<BunglaHouse> hList = [];
-    var name = ["Wings Tower", "Mill Sper House", "Bungalow House", "Sky Dandelions Apartment"];
+    var name = [
+      "Wings Tower",
+      "Mill Sper House",
+      "Bungalow House",
+      "Sky Dandelions Apartment"
+    ];
     var image = [
       "assets/screen13/icon/home1.png",
       "assets/screen13/icon/home3.png",
@@ -626,11 +655,10 @@ class Common {
       2900,
       2800,
       2000,
-
     ];
 
-    for(int i = 0 ; i<name.length;i++){
-      BunglaHouse bunglaHouse =BunglaHouse();
+    for (int i = 0; i < name.length; i++) {
+      BunglaHouse bunglaHouse = BunglaHouse();
       bunglaHouse.name = name[i];
       bunglaHouse.image = image[i];
       bunglaHouse.location = location[i];
@@ -639,5 +667,46 @@ class Common {
     }
 
     return hList;
+  }
+
+  List<BoysFashion> fashionData() {
+    List<BoysFashion> fList = [];
+    var dressName = [
+      "Dress",
+      "Shirt",
+      "Pants",
+      "t-Shirt",
+    ];
+    var dressImage = [
+      "assets/screen14/icon/dress.png",
+      "assets/screen14/icon/tshirt.png",
+      "assets/screen14/icon/pant.png",
+      "assets/screen14/icon/tshirt.png",
+    ];
+    var typeName = [
+      "Long Sleeve \nShirts",
+      "Long Sleeve \nShirts",
+      "Long Sleeve \nShirts",
+      "Long Sleeve \nShirts",
+    ];
+    var boysImage = [
+      "assets/screen14/icon/boy1.png",
+      "assets/screen14/icon/boy2.png",
+      "assets/screen14/icon/boy1.png",
+      "assets/screen14/icon/boy2.png",
+    ];
+    var price = [290, 220, 450, 550];
+
+    for (int i = 0; i < boysImage.length; i++) {
+      BoysFashion boysFashion = BoysFashion();
+      boysFashion.dressImage = dressImage[i];
+      boysFashion.dressName = dressName[i];
+      boysFashion.boysImage = boysImage[i];
+      boysFashion.typeName = typeName[i];
+      boysFashion.price = price[i];
+      fList.add(boysFashion);
+    }
+
+    return fList;
   }
 }
