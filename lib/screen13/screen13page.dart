@@ -21,8 +21,6 @@ class _HousePageState extends State<HousePage> {
     // TODO: implement initState
     super.initState();
   }
-
-
   List<HouseData> aList = [];
   List<Estates> hList = [];
   List<BunglaHouse> homeList = [];
