@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:figmadesign/model/Statesdata.dart';
 import 'package:figmadesign/model/aboutview.dart';
 import 'package:figmadesign/model/artdata.dart';
@@ -46,6 +47,22 @@ class Common {
     );
   }
 
+  static Widget imageSlider({item }){
+    CarouselController buttonCarouselController = CarouselController();
+    return CarouselSlider(
+      items:  [
+        item,
+      ],
+      carouselController: buttonCarouselController,
+      options: CarouselOptions(
+        autoPlay: true,
+        enlargeCenterPage: true,
+        viewportFraction: 1,
+        aspectRatio: 2.0,
+        initialPage: 0,
+      ),
+    );
+  }
   static Widget customContainer(
       {Color? color,
       BorderRadiusGeometry? borderRadius,

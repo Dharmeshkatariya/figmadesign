@@ -22,7 +22,7 @@ class _HousePageState extends State<HousePage> {
     super.initState();
   }
 
-  CarouselController buttonCarouselController = CarouselController();
+
   List<HouseData> aList = [];
   List<Estates> hList = [];
   List<BunglaHouse> homeList = [];
@@ -31,37 +31,36 @@ class _HousePageState extends State<HousePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    bottomNavigationBar: BottomNavigationBar(
-      currentIndex: currentIndex,
-      type: BottomNavigationBarType.fixed,
-      backgroundColor:const  Color(0xFF196C7E),
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white.withOpacity(.60),
-      selectedFontSize: 14,
-      unselectedFontSize: 14,
-      onTap: (value) {
-        setState(() => currentIndex = value);
-      },
-      items: const [
-        BottomNavigationBarItem(
-          label:"fav",
-          icon: Icon(Icons.home_filled),
-        ),
-        BottomNavigationBarItem(
-          label:"search",
-          icon: Icon(Icons.search),
-        ),
-        BottomNavigationBarItem(
-          label:"fav",
-          icon: Icon(Icons.heart_broken),
-        ),
-        BottomNavigationBarItem(
-          label:"profile",
-          icon: Icon(Icons.person),
-        ),
-
-      ],
-    ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: const Color(0xFF196C7E),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white.withOpacity(.60),
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        onTap: (value) {
+          setState(() => currentIndex = value);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            label: "fav",
+            icon: Icon(Icons.home_filled),
+          ),
+          BottomNavigationBarItem(
+            label: "search",
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: "fav",
+            icon: Icon(Icons.heart_broken),
+          ),
+          BottomNavigationBarItem(
+            label: "profile",
+            icon: Icon(Icons.person),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -86,7 +85,9 @@ class _HousePageState extends State<HousePage> {
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: const Icon(Icons.mic),
                     ),
-                    const   SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     SizedBox(
                       height: 45,
                       child: ListView.builder(
@@ -96,9 +97,15 @@ class _HousePageState extends State<HousePage> {
                             return _allList(index);
                           }),
                     ),
-                    const   SizedBox(height: 10,),
-                    _imageSlider(),
-                    const   SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Common.imageSlider(
+                      item: _imageSlider(),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     _featureRow("Featured Estates"),
                     SizedBox(
                       height: 150,
@@ -113,8 +120,7 @@ class _HousePageState extends State<HousePage> {
                     SizedBox(
                       height: 70,
                       child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-
+                          scrollDirection: Axis.horizontal,
                           itemCount: aList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return _locationList(index);
@@ -153,25 +159,57 @@ class _HousePageState extends State<HousePage> {
       ),
     );
   }
-   Widget _personList(int index){
-     HouseData houseData = aList[index];
+
+  Widget _imageSlider() {
+    return Stack(
+      children: [
+        ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: Image.asset("assets/screen10/icon/offer.png")),
+        Positioned(
+            left: 10,
+            top: 40,
+            child: Common.customText(
+                text: "Halloween \nSale!",
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Colors.white)),
+        Positioned(
+            left: 10,
+            top: 90,
+            child: Common.customText(
+                text: "All discount up to 60%",
+                fontSize: 10,
+                fontWeight: FontWeight.w400,
+                color: Colors.white)),
+      ],
+    );
+  }
+
+  Widget _personList(int index) {
+    HouseData houseData = aList[index];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      margin:const  EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(houseData.pImage),
-          Common.customText(text: houseData.person,fontSize: 10,fontWeight: FontWeight.w500,color: Colors.blue.shade900),
+          Common.customText(
+              text: houseData.person,
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+              color: Colors.blue.shade900),
         ],
       ),
     );
-   }
+  }
+
   Widget _locationList(int index) {
     HouseData houseData = aList[index];
     return Container(
-      margin:const  EdgeInsets.symmetric(horizontal: 5),
-      padding:const  EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -185,7 +223,7 @@ class _HousePageState extends State<HousePage> {
   Widget _gridItem(int index) {
     BunglaHouse bunglaHouse = homeList[index];
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       color: Colors.blue.shade50,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -198,11 +236,10 @@ class _HousePageState extends State<HousePage> {
               fontSize: 15,
               fontWeight: FontWeight.w700),
           Common.customText(
-              text: "Rs${bunglaHouse.rate}\/month",
+              text: "Rs${bunglaHouse.rate}/month",
               fontSize: 15,
               fontWeight: FontWeight.w700),
           Row(
-
             children: [
               const Icon(
                 Icons.star,
@@ -229,7 +266,7 @@ class _HousePageState extends State<HousePage> {
     return Container(
       color: Colors.blue.shade50,
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -261,7 +298,7 @@ class _HousePageState extends State<HousePage> {
                 ],
               ),
               Common.customText(
-                  text: "Rs ${estates.rate}\/month",
+                  text: "Rs ${estates.rate}/month",
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ],
@@ -309,48 +346,10 @@ class _HousePageState extends State<HousePage> {
             fontSize: 10,
             fontWeight: FontWeight.w500),
         const Icon(Icons.keyboard_arrow_down),
-        Spacer(),
+        const Spacer(),
         const Icon(Icons.notification_important),
         Image.asset("assets/screen13/icon/p13.png"),
       ],
-    );
-  }
-
-  Widget _imageSlider() {
-    return CarouselSlider(
-      items: [
-        Stack(
-          children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: Image.asset("assets/screen10/icon/offer.png")),
-            Positioned(
-                left: 10,
-                top: 40,
-                child: Common.customText(
-                    text: "Halloween \nSale!",
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white)),
-            Positioned(
-                left: 10,
-                top: 90,
-                child: Common.customText(
-                    text: "All discount up to 60%",
-                    fontSize: 10,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white)),
-          ],
-        )
-      ],
-      carouselController: buttonCarouselController,
-      options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        viewportFraction: 1,
-        aspectRatio: 2.0,
-        initialPage: 0,
-      ),
     );
   }
 }

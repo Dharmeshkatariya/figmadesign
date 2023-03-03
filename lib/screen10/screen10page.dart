@@ -17,7 +17,7 @@ class FoodOderPage extends StatefulWidget {
 class _FoodOderPageState extends State<FoodOderPage> {
   int page = 0;
 
-  CarouselController buttonCarouselController = CarouselController();
+
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class _FoodOderPageState extends State<FoodOderPage> {
                     children: [
                       _textFieldRow(),
                      const  SizedBox(height: 18,),
-                      _imageSlider(),
+                     Common.imageSlider(item: _imageSlider() ),
                       const SizedBox(
                         height: 10,
                       ),
@@ -286,50 +286,38 @@ class _FoodOderPageState extends State<FoodOderPage> {
     );
   }
   Widget _imageSlider() {
-    return CarouselSlider(
-      items: [
-        Stack(
-          children: [
-            Image.asset("assets/screen10/icon/offer.png"),
-            Positioned(
-                left: 80,
-                bottom: 40,
-                child: Image.asset("assets/screen10/icon/t1.png")),
-            Positioned(
-                left: 10,
-                bottom: 10,
-                child: Common.customText(
-                    text: "60% off",
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.orange)),
-            Positioned(
-                left: 10,
-                bottom: 40,
-                child: Common.customText(
-                    text: "Get your first order at",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white)),
-            Positioned(
-                right: 10,
-                bottom: 10,
-                child: Common.customText(
-                    text: "*Only available for new foodies.",
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white)),
-          ],
-        )
+    return Stack(
+      children: [
+        Image.asset("assets/screen10/icon/offer.png"),
+        Positioned(
+            left: 80,
+            bottom: 40,
+            child: Image.asset("assets/screen10/icon/t1.png")),
+        Positioned(
+            left: 10,
+            bottom: 10,
+            child: Common.customText(
+                text: "60% off",
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+                color: Colors.orange)),
+        Positioned(
+            left: 10,
+            bottom: 40,
+            child: Common.customText(
+                text: "Get your first order at",
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Colors.white)),
+        Positioned(
+            right: 10,
+            bottom: 10,
+            child: Common.customText(
+                text: "*Only available for new foodies.",
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: Colors.white)),
       ],
-      carouselController: buttonCarouselController,
-      options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        viewportFraction: 1,
-        aspectRatio: 2.0,
-        initialPage: 0,
-      ),
     );
   }
 }
