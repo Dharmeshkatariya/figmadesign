@@ -26,10 +26,42 @@ class _HousePageState extends State<HousePage> {
   List<HouseData> aList = [];
   List<Estates> hList = [];
   List<BunglaHouse> homeList = [];
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    bottomNavigationBar: BottomNavigationBar(
+      currentIndex: currentIndex,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor:const  Color(0xFF196C7E),
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white.withOpacity(.60),
+      selectedFontSize: 14,
+      unselectedFontSize: 14,
+      onTap: (value) {
+        setState(() => currentIndex = value);
+      },
+      items: const [
+        BottomNavigationBarItem(
+          label:"fav",
+          icon: Icon(Icons.home_filled),
+        ),
+        BottomNavigationBarItem(
+          label:"search",
+          icon: Icon(Icons.search),
+        ),
+        BottomNavigationBarItem(
+          label:"fav",
+          icon: Icon(Icons.heart_broken),
+        ),
+        BottomNavigationBarItem(
+          label:"profile",
+          icon: Icon(Icons.person),
+        ),
+
+      ],
+    ),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
