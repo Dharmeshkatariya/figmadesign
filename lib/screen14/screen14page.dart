@@ -125,6 +125,7 @@ class _ClothesPageState extends State<ClothesPage> {
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                         crossAxisCount: 2,
+
                         children: List.generate(dressList.length, (index) => _boyFashionList(index))
                     ),
                   ],
@@ -171,7 +172,7 @@ class _ClothesPageState extends State<ClothesPage> {
             ),
             child: Image.asset(
               boysFashion.boysImage,
-              height: 100,
+             height: 100,
               fit: BoxFit.fill,
             ),
           ),
@@ -215,10 +216,10 @@ class _ClothesPageState extends State<ClothesPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SvgPicture.asset("assets/screen14/icon/drawer14.svg"),
-        Spacer(),
+        const Spacer(),
         const Icon(Icons.location_on),
         Common.customText(text: "15/2 New Texas"),
-        Spacer(),
+        const Spacer(),
         SvgPicture.asset("assets/screen14/icon/noti14.svg"),
       ],
     );
