@@ -17,7 +17,7 @@ class FoodScreenPage extends StatefulWidget {
 
 class _FoodScreenPageState extends State<FoodScreenPage> {
   int selectedIndex = 0; //New
-  CarouselController buttonCarouselController = CarouselController();
+
 
   @override
   void initState() {
@@ -77,7 +77,7 @@ class _FoodScreenPageState extends State<FoodScreenPage> {
                   child: Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _imageSlider(),
+                     Common.imageSlider(item: _imageSlider()),
                       SizedBox(
                         height: 145,
                         child: ListView.builder(
@@ -231,56 +231,44 @@ class _FoodScreenPageState extends State<FoodScreenPage> {
   }
 
   Widget _imageSlider() {
-    return CarouselSlider(
-      carouselController: buttonCarouselController,
-      items: [
-        Stack(
-          children: [
-            Image.asset(
-              "assets/screen9/icon/image9.png",
-            ),
-            Positioned(
-                bottom: 65,
-                left: 10,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.orange[300],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: Common.customText(
-                      text: "Fried Rice",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 8,
-                      color: Colors.white),
-                )),
-            Positioned(
-                bottom: 30,
-                left: 10,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.orange[300],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: Common.customText(
-                      text: "#3500",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 8,
-                      color: Colors.white),
-                )),
-          ],
-        )
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/screen9/icon/image9.png",
+        ),
+        Positioned(
+            bottom: 65,
+            left: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.orange[300],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              padding:
+              const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              child: Common.customText(
+                  text: "Fried Rice",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 8,
+                  color: Colors.white),
+            )),
+        Positioned(
+            bottom: 30,
+            left: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.orange[300],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              padding:
+              const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              child: Common.customText(
+                  text: "#3500",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 8,
+                  color: Colors.white),
+            )),
       ],
-      options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        viewportFraction: 1,
-        aspectRatio: 2.0,
-        initialPage: 0,
-      ),
     );
   }
 
