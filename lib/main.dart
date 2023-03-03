@@ -163,6 +163,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               }
               ),
+              Common.navigatePage(text: "Screen 16",onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const VisitorPage()),
+                );
+              }
+              ),
             ],
           ),
           ),

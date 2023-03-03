@@ -71,12 +71,13 @@ class _FoodScreenPageState extends State<FoodScreenPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _searchRow(),
-              _labelRow(),
+
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      _labelRow(),
                      Common.imageSlider(item: _imageSlider()),
                       SizedBox(
                         height: 145,

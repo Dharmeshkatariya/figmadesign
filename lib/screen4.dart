@@ -72,59 +72,66 @@ class _ScreenFourPageState extends State<ScreenFourPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-              height: 280,
-              color: Colors.orange,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: -10,
-                    right: 5,
-                    child: SvgPicture.asset(
-                      "assets/screen4/icon/ring.svg",
-                    ),
-                  ),
-                  Positioned(
-                    top: 33,
-                    left: 80,
-                    child: SvgPicture.asset(
-                      "assets/screen4/icon/circle.svg",
-                    ),
-                  ),
-                  Positioned(
-                    top: 140,
-                    left: -45,
-                    child: SvgPicture.asset(
-                      "assets/screen4/icon/ring.svg",
-                    ),
-                  ),
-                  _appRow(),
-                  Positioned(
-                    top: 30,
-                    left: 10,
-                    right: 10,
-                    child: Common.textField(
-                        text: "Search",
-                        prefixIcon: const Icon(Icons.search),
-                        fillColor: Colors.white),
-                  ),
-                  Positioned(
-                    top: 110,
-                    left: 10,
-                    right: 10,
-                    child: Common.imageSlider(item: _imageSlider()),
-                  ),
-                ],
-              ),
-            ),
             Expanded(
-              child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: carList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _listItem(index);
-                  }),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      height: 280,
+                      color: Colors.orange,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: -10,
+                            right: 5,
+                            child: SvgPicture.asset(
+                              "assets/screen4/icon/ring.svg",
+                            ),
+                          ),
+                          Positioned(
+                            top: 33,
+                            left: 80,
+                            child: SvgPicture.asset(
+                              "assets/screen4/icon/circle.svg",
+                            ),
+                          ),
+                          Positioned(
+                            top: 140,
+                            left: -45,
+                            child: SvgPicture.asset(
+                              "assets/screen4/icon/ring.svg",
+                            ),
+                          ),
+                          _appRow(),
+                          Positioned(
+                            top: 30,
+                            left: 10,
+                            right: 10,
+                            child: Common.textField(
+                                text: "Search",
+                                prefixIcon: const Icon(Icons.search),
+                                fillColor: Colors.white),
+                          ),
+                          Positioned(
+                            top: 110,
+                            left: 10,
+                            right: 10,
+                            child: Common.imageSlider(item: _imageSlider()),
+                          ),
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                        itemCount: carList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return _listItem(index);
+                        }),
+                  ],
+                ),
+              ),
             )
           ],
         ),

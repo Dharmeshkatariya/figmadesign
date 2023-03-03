@@ -25,31 +25,39 @@ class _ScreenSecondPageState extends State<ScreenSecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        margin: const EdgeInsets.only(left: 5,right: 5,top: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+
           children: [
             _historyRow(),
-            Common.customText(
-              text: "Date",
-              color: Colors.grey,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            _mayRow(),
-            _containerRow(),
-            Expanded(
-              child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: uList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _listviewItem(index);
-                  }),
-            ),
+         Expanded(
+           child: SingleChildScrollView(
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                 Common.customText(
+                   text: "Date",
+                   color: Colors.grey,
+                   fontSize: 18,
+                   fontWeight: FontWeight.w500,
+                 ),
+                 const SizedBox(
+                   height: 10,
+                 ),
+                 _mayRow(),
+                 _containerRow(),
+                 ListView.builder(
+                     shrinkWrap: true,
+                     physics: const NeverScrollableScrollPhysics(),
+                     itemCount: uList.length,
+                     itemBuilder: (BuildContext context, int index) {
+                       return _listviewItem(index);
+                     }),
+               ],
+             ),
+           ),
+         )
           ],
         ),
       ),

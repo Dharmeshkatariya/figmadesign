@@ -28,7 +28,7 @@ class _ScreenPageState extends State<ScreenPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset('assets/screen1/icon/back.svg'),
+                    SvgPicture.asset('assets/screen1/icon/back1.svg'),
                     const Spacer(),
                     GestureDetector(
                         onTap: () {
@@ -191,6 +191,7 @@ class _ScreenPageState extends State<ScreenPage> {
 
   Widget _buttonRow() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
           onTap: () {

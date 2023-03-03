@@ -77,9 +77,13 @@ class _MultiPlaneState extends State<MultiPlane> {
                       return _monthList(index);
                     }),
               ),
-              const  SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               _dateRow(),
-             const  SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Expanded(
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -107,6 +111,7 @@ class _MultiPlaneState extends State<MultiPlane> {
       ),
     );
   }
+
   Widget _listview(int index) {
     Month month = aList[index];
     return Container(
@@ -116,7 +121,9 @@ class _MultiPlaneState extends State<MultiPlane> {
         children: [
           Common.customText(
               text: month.day, fontSize: 15, fontWeight: FontWeight.w400),
-         const  SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Image.asset(month.image),
         ],
       ),

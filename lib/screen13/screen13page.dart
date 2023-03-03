@@ -62,96 +62,100 @@ class _HousePageState extends State<HousePage> {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _profileRow(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Common.customText(
-                        text: "Hey, Jonathan! \nLet's start exploring ",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 25,
-                        color: Colors.green[900]),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Common.textField(
-                      text: "Search House, Apartment, etc",
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: const Icon(Icons.mic),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 45,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: aList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return _allList(index);
-                          }),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Common.imageSlider(
-                      item: _imageSlider(),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    _featureRow("Featured Estates"),
-                    SizedBox(
-                      height: 150,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: hList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return _featureEstates(index);
-                          }),
-                    ),
-                    _featureRow("Top Location"),
-                    SizedBox(
-                      height: 70,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: aList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return _locationList(index);
-                          }),
-                    ),
-                    _featureRow("Top Estate Agent"),
-                    SizedBox(
-                      height: 120,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: aList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return _personList(index);
-                          }),
-                    ),
-                    _featureRow("Explore Nearby Estates"),
-                    GridView.count(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      primary: false,
-                      childAspectRatio: 0.6,
-                      crossAxisSpacing: 5,
-                      mainAxisSpacing: 5,
-                      crossAxisCount: 2,
-                      children: List.generate(
-                        homeList.length,
-                        (index) => _gridItem(index),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _profileRow(),
+              Common.customText(
+                  text: "Hey, Jonathan! \nLet's start exploring ",
+                  fontWeight: FontWeight.w500,
+                  fontSize: 25,
+                  color: Colors.green[900]),
+              const SizedBox(
+                height: 10,
+              ),
+              Common.textField(
+                text: "Search House, Apartment, etc",
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: const Icon(Icons.mic),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+                      SizedBox(
+                        height: 45,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: aList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return _allList(index);
+                            }),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Common.imageSlider(
+                        item: _imageSlider(),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      _featureRow("Featured Estates"),
+                      SizedBox(
+                        height: 150,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: hList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return _featureEstates(index);
+                            }),
+                      ),
+                      _featureRow("Top Location"),
+                      SizedBox(
+                        height: 70,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: aList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return _locationList(index);
+                            }),
+                      ),
+                      _featureRow("Top Estate Agent"),
+                      SizedBox(
+                        height: 120,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: aList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return _personList(index);
+                            }),
+                      ),
+                      _featureRow("Explore Nearby Estates"),
+                      GridView.count(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        primary: false,
+                        childAspectRatio: 0.6,
+                        crossAxisSpacing: 5,
+                        mainAxisSpacing: 5,
+                        crossAxisCount: 2,
+                        children: List.generate(
+                          homeList.length,
+                          (index) => _gridItem(index),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       ),

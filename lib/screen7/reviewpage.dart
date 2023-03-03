@@ -39,25 +39,32 @@ class _ReviewPageState extends State<ReviewPage> {
               const SizedBox(
                 height: 14,
               ),
-              Row(
-                children: [
-                  Common.customText(
-                      text: "4.6",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 48,
-                      color: Colors.white),
-                ],
-              ),
-              const SizedBox(
-                height: 14,
-              ),
               Expanded(
-                child: ListView.builder(
-                    padding: const EdgeInsets.all(8),
-                    itemCount: rList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return _listItem(index);
-                    }),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Common.customText(
+                              text: "4.6",
+                              fontWeight: FontWeight.w600,
+                              fontSize: 48,
+                              color: Colors.white),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 14,
+                      ),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: rList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return _listItem(index);
+                          }),
+                    ],
+                  ),
+                ),
               ),
               Common.customContainer(
                 color: Colors.yellow,

@@ -128,50 +128,52 @@ class _FoodPageState extends State<FoodPage> {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(45), topRight: Radius.circular(45)),
       ),
-      child: Column(
+      child: SingleChildScrollView(
+        child: Column(
 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Common.customText(
-              text: "Rice With Green Peas\nAnd Shrimps",
-              fontSize: 25,
-              fontWeight: FontWeight.w700),
-          const SizedBox(height: 15,),
-          _counterRow(),
-          const SizedBox(height: 15,),
-          Common.customText(
-              text: "À propos de", fontWeight: FontWeight.w400, fontSize: 18),
-          const SizedBox(height: 15,),
-          Common.customText(
-              text:
-                  "Ce plat de crevettes, pois et riz est le préféré de toute la famille !\nIl est rapide à cuisiner et ne nécessite aucun hachage, facile.",
-              fontWeight: FontWeight.w400,
-              fontSize: 10),
-          const SizedBox(height: 25,),
-          Common.customText(
-              text: "Ingrédients", fontSize: 18, fontWeight: FontWeight.w400),
-          SizedBox(
-            height: 90,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: vList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return _listView(index);
-                }),
-          ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Common.customText(
+                text: "Rice With Green Peas\nAnd Shrimps",
+                fontSize: 25,
+                fontWeight: FontWeight.w700),
+            const SizedBox(height: 15,),
+            _counterRow(),
+            const SizedBox(height: 15,),
+            Common.customText(
+                text: "À propos de", fontWeight: FontWeight.w400, fontSize: 18),
+            const SizedBox(height: 15,),
+            Common.customText(
+                text:
+                    "Ce plat de crevettes, pois et riz est le préféré de toute la famille !\nIl est rapide à cuisiner et ne nécessite aucun hachage, facile.",
+                fontWeight: FontWeight.w400,
+                fontSize: 10),
+            const SizedBox(height: 25,),
+            Common.customText(
+                text: "Ingrédients", fontSize: 18, fontWeight: FontWeight.w400),
+            SizedBox(
+              height: 90,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: vList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return _listView(index);
+                  }),
+            ),
 
-          Common.customContainer(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-            margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 23),
-            color: Colors.orange.shade800,
-            child: Common.customText(
-                text: "Suivant",
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.white),
-            borderRadius: BorderRadius.circular(30),
-          )
-        ],
+            Common.customContainer(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 23),
+              color: Colors.orange.shade800,
+              child: Common.customText(
+                  text: "Suivant",
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white),
+              borderRadius: BorderRadius.circular(30),
+            )
+          ],
+        ),
       ),
     );
   }
